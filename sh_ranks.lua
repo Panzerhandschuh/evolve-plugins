@@ -39,7 +39,7 @@ function PLUGIN:Call( ply, args )
 					if ( evolve.ranks[ args[2] ] ) then
 						if ( !ply:IsValid() or ply:IsListenServerHost() or evolve.ranks[ args[2] ].Immunity < evolve.ranks[ ply:EV_GetRank() ].Immunity ) then
 							if ( pl.Ply ) then
-								if ( ply:EV_BetterThan( pl.Ply ) ) then
+								if ( ply:EV_BetterThanOrEqual( pl.Ply ) ) then
 									pl.Ply:EV_SetRank( args[2] )
 								else
 									evolve:Notify( ply, evolve.colors.red, evolve.constants.noplayers2 )
